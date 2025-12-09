@@ -1,0 +1,23 @@
+import re
+
+#pilko string jokaista 0 kohden laske nollat
+def turnDial(rotation, position):
+    
+    s = re.findall("[a-zA-Z]+", rotation)[0]  # Extracting letters
+    n = int(re.findall("[0-9]+", rotation)[0])  # Extracting numbers
+    
+    for i in range(1,n +1):
+        print(i)
+
+    print(s,n)
+
+
+
+
+position = 50
+with open('code.txt', 'r') as file:
+    for line in file:
+        turnDial(line.strip(), position)
+
+
+#palauta joka kierroksella positio ja nollien määrä
