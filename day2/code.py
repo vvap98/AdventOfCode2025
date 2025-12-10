@@ -1,13 +1,14 @@
 import re
 
+# part 2 
+
 zeroCount = 0
 position = 50
-#pilko string jokaista 0 kohden laske nollat
 def turnDial(rotation, position):
     zeroCount = 0
     
-    s = re.findall("[a-zA-Z]+", rotation)[0]  # Otetaan L tai R
-    n = int(re.findall("[0-9]+", rotation)[0])  # Otetaan numerot stringistä 
+    s = re.findall("[a-zA-Z]+", rotation)[0]  
+    n = int(re.findall("[0-9]+", rotation)[0])  
     
     for i in range(1,n +1):
         if s == "R":
@@ -18,9 +19,8 @@ def turnDial(rotation, position):
             position = 0
         if position == -1:
             position = 99
-    if position == 0:
-        zeroCount = zeroCount + 1
-        #KUINKA MONTA KERTAA DIAL JÄTETÄÄN 0 EI KUINKA MONTA KERTAA SE OHITTAA SEN
+        if position == 0:
+            zeroCount = zeroCount + 1
     return(zeroCount, position)
 
 
@@ -34,5 +34,3 @@ with open('code.txt', 'r') as file:
         position = x
 
     print(zeroCount)
-
-#palauta joka kierroksella positio ja nollien määrä

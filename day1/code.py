@@ -1,5 +1,7 @@
 import re
 
+#part 1 count only zeros at the end of rotation
+
 zeroCount = 0
 position = 50
 def turnDial(rotation, position):
